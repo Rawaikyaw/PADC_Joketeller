@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".activities.HomeActivity">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <xyz.aungpyaephyo.joketeller.components.textviews.MMTextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/app_name_mm"
+                    android:textSize="@dimen/text_heading_1x" />
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/margin_medium"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <xyz.aungpyaephyo.joketeller.components.buttons.MMButton
+                android:id="@+id/btn_next_joke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/margin_medium_2"
+                android:layout_marginRight="@dimen/margin_medium_2"
+                android:paddingLeft="@dimen/margin_medium_2"
+                android:paddingRight="@dimen/margin_medium_2"
+                android:text="@string/lbl_next_joke" />
+
+            <xyz.aungpyaephyo.joketeller.components.buttons.MMButton
+                android:id="@+id/btn_previous_joke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/btn_next_joke"
+                android:layout_toLeftOf="@id/btn_next_joke"
+                android:paddingLeft="@dimen/margin_medium_2"
+                android:paddingRight="@dimen/margin_medium_2"
+                android:text="@string/lbl_previous_joke" />
+
+            <FrameLayout
+                android:id="@+id/fl_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/btn_next_joke"
+                android:paddingBottom="@dimen/margin_medium_2" />
+
+            <xyz.aungpyaephyo.joketeller.components.textviews.MMTextView
+                android:id="@+id/tv_search_jokes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.4"
+                android:padding="@dimen/margin_medium_2"
+                android:text="@string/msg_search_jokes_guide"
+                android:textSize="@dimen/text_regular_3x"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/ic_share_black_24dp"
+            android:visibility="gone" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/left_menu_header"
+        app:menu="@menu/left_menu"/>
+
+</android.support.v4.widget.DrawerLayout>
+

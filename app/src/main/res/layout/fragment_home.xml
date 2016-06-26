@@ -1,0 +1,69 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.JokeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_medium_2"
+        tools:context=".fragments.JokeFragment">
+
+        <xyz.aungpyaephyo.joketeller.components.textviews.MMTextView
+            android:id="@+id/tv_joke_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.4"
+            android:textSize="@dimen/text_regular_3x"
+            tools:text="@string/joke_one_title" />
+
+        <ImageView
+            android:id="@+id/iv_joke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_joke_title"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            tools:src="@drawable/joke_1" />
+
+        <xyz.aungpyaephyo.joketeller.components.textviews.MMTextView
+            android:id="@+id/tv_joke_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_joke"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:fontFamily="sans-serif-light"
+            android:lineSpacingMultiplier="1.4"
+            tools:text="@string/joke_one_content" />
+
+        <RadioGroup
+            android:id="@+id/rg_funny_range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_joke_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:orientation="horizontal">
+
+            <xyz.aungpyaephyo.joketeller.components.radiobuttons.MMRadioButton
+                android:id="@+id/rb_very_funny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:text="@string/lbl_very_funny" />
+
+            <xyz.aungpyaephyo.joketeller.components.radiobuttons.MMRadioButton
+                android:id="@+id/rb_funny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:text="@string/lbl_funny" />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+</ScrollView>
+
+
